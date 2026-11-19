@@ -1,20 +1,61 @@
 import mongoose from "mongoose";
 import { CastError } from "mongoose";
+import {sendServerError} from "../database.js";
 
 export const User = mongoose.model(
   'User',
   new mongoose.Schema({
-    name: String,
-    bar: String,
+    username: {
+      type: String,
+      required: true,
+    },
+    passwordHash: {
+      type: String,
+      required: true,
+    },
+    admin: {
+      type: Boolean, default: false
+    },
   }), "users",)
+
+const schemaOptions = ["name", "bar"]
 
 export function createUser(app) {
   app.post('/api/user', async (req, res) => {
-    res.status(201).json(await User.create(req.body))
+    try {
+      const { username, passwordHash } = req.body;
+
+      const person = await User.create({
+        username: username,
+        passwordHash: passwordHash,
+        admin: false,
+      })
+
+      return res.status(201).json({
+        _id: person._id,
+        username: person.username,
+      })
+    } catch (e) {
+      if (e instanceof mongoose.Error.ValidationError) {
+        return res.status(400).json({
+          error: "Invalid form entry",
+          details: e.stack,
+        })
+      }
+      sendServerError(res, "An unknown error occured while creating user", e);
+    }
   })
 }
 
-export function modifyUser(app) {}
+export function modifyUser(app) {
+  app.patch('/api/user/:id', async (req, res) => {
+
+
+    try {
+      let user = await User.findByIdAndUpdate()
+    } catch {return}
+  })
+}
 
 export function deleteUser(app) {
   app.delete('/api/user/:id', async (req, res) => {
