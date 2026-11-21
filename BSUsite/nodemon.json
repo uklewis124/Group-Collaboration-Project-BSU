@@ -1,4 +1,4 @@
 {
-  "ext": "js, json, cjs, mjs, env",
+  "ext": "js, json, cjs, mjs, env, html, css, jsx",
   "ignore": ["client/", "dist/"]
 }
