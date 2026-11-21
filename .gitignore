@@ -150,3 +150,4 @@ vite.config.ts.timestamp-*
 
 # any env
 *.env
+atlas-credentials.env
