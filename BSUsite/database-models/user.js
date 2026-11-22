@@ -108,7 +108,11 @@ export function deleteUser(app) {
 export function getUserById(app) {
   app.get('/api/user/:id', async (req, res) => {
     try {
-      return res.status(200).json(await User.findById(req.params.id))
+      const person = await User.findById(req.params.id);
+      return res.status(200).json({
+        _id: person._id,
+        username: person.username,
+      })
     } catch (e) {
       if (e instanceof CastError) {
         return res.status(404).json({"error": "User not found"})
