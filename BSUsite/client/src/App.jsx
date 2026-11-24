@@ -3,6 +3,7 @@ import React from "react";
 import "./App.css";
 import Header from "./components/Header";
 import EventCard from "./components/EventCard";
+
 function App() {
   return (
     <div>
@@ -12,6 +13,8 @@ function App() {
         <h2>Welcome</h2>
         <p>Find out what's on at your Students' Union.</p>
         <EventCard title="Freshers Fair" date="24 Nov" location="Main Hall" />
+        <EventCard title="Society Social" date="1 Dec" location="Student Hall"/>
+        <EventCard title="Open Mic Night" date="5th Dec" location="SU bar"/>
       </main>
     </div>
   );
