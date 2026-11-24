@@ -54,5 +54,27 @@ main {
   align-items: center;
   text-align: center;
   padding: 40px;
-  margin: 0 auto 30px;
+  margin: 0 0 30px 10%;
+}
+
+.intro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+.intro img {
+  width: 100%;
+  max-width: 500px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 20px;
+  border: 20px solid #64f075;
+}
+
+@media (min-width: 768px) {
+  .intro {
+    flex-direction: row;
+  }
 }
