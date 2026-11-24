@@ -10,8 +10,10 @@ function App() {
       <Header />
 
       <main>
-        <h2>Welcome</h2>
-        <p>Find out what's on at your Students' Union.</p>
+        <section className="welcome">
+  <h2>Welcome</h2>
+  <p>Find out what's on at your Students' Union.</p>
+</section>
         <div className="event-list">
   <EventCard title="Freshers Fair" date="24 Nov" location="Main Hall" />
   <EventCard title="Society Social" date="1 Dec" location="Student Hall" />
