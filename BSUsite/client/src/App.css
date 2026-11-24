@@ -9,13 +9,14 @@ body {
 .header {
   background-color: #3755DB;
   color: white;
-  padding: 20px;
+  padding: 45px;
   text-align: center;
 }
 
 .header nav a {
   color: white;
   margin-right: 20px;
+  text-decoration: none;
 }
 
 main {
@@ -44,7 +45,7 @@ main {
 }
 .welcome {
   background-color: #d772bb;
-  color: white;
+  color: rgb(34, 31, 31);
   width: 320px;
   height: 320px;
   border-radius: 50%;
@@ -55,6 +56,7 @@ main {
   text-align: center;
   padding: 40px;
   margin: 0 0 30px 10%;
+  justify-content: center;
 }
 
 .intro {
@@ -62,6 +64,7 @@ main {
   flex-direction: column;
   align-items: center;
   gap: 30px;
+  
 }
 
 .intro img {
@@ -77,4 +80,17 @@ main {
   .intro {
     flex-direction: row;
   }
+}
+
+.logo {
+  width: 150px;
+  height: auto;
+
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
 }
