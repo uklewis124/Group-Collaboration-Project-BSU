@@ -1,31 +1,40 @@
-
-import React from "react";
+import React, { useState } from "react";
 import "./App.css";
 import Header from "./components/Header";
 import EventCard from "./components/EventCard";
 import students from "./assets/bsu-students.png";
+
 function App() {
+  const [page, setPage] = useState("home");
+
   return (
     <div>
-      <Header />
+      <Header setPage={setPage} />
 
       <main>
-        <div className="intro">
-  <section className="welcome">
-    <h2>Welcome</h2>
-    <p>Find out what's on at your Students' Union.</p>
-  </section>
+        {page === "home" && (
+          <>
+            <div className="intro">
+              <section className="welcome">
+                <h2>Welcome</h2>
+                <p>Find out what's on at your Students' Union.</p>
+              </section>
 
-  <img
-    src={students}
-    alt="Students' Union representatives welcoming students"
-  />
-</div>
-        <div className="event-list">
-  <EventCard title="Freshers Fair" date="24 Nov" location="Main Hall" />
-  <EventCard title="Society Social" date="1 Dec" location="Student Hall" />
-  <EventCard title="Open Mic Night" date="5th Dec" location="SU bar" />
-</div>
+              <img
+                src={students}
+                alt="Students' Union representatives welcoming students"
+              />
+            </div>
+
+            <div className="event-list">
+              <EventCard title="Freshers Fair" date="24 Nov" location="Main Hall" />
+              <EventCard title="Society Social" date="1 Dec" location="Student Hall" />
+              <EventCard title="Open Mic Night" date="5th Dec" location="SU bar" />
+            </div>
+          </>
+        )}
+
+        {page === "events" && <h2>Events page</h2>}
       </main>
     </div>
   );

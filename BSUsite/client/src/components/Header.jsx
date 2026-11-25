@@ -1,7 +1,7 @@
 import React from "react";
 import logo from "../assets/bsu-logo.png";
 
-function Header() {
+function Header({ setPage }) {
   return (
     <header className="header">
       <div className="brand">
@@ -10,11 +10,11 @@ function Header() {
         <div className="title-block">
           <h1>Bath Spa Students' Union</h1>
           <nav>
-            <a href="#events">Events</a>
-            <a href="#contact">Contact</a>
+            <a href="#" onClick={(e) => { e.preventDefault(); setPage("home"); }}>Home</a>
+<a href="#" onClick={(e) => { e.preventDefault(); setPage("events"); }}>Events</a>
           </nav>
         </div>
-      </div>
+      </div> 
     </header>
   );
 }
