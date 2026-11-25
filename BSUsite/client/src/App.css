@@ -45,7 +45,7 @@ main {
 }
 .welcome {
   background-color: #d772bb;
-  color: rgb(34, 31, 31);
+  color: rgb(249, 248, 248);
   width: 320px;
   height: 320px;
   border-radius: 50%;
@@ -57,6 +57,7 @@ main {
   padding: 40px;
   margin: 0 0 30px 10%;
   justify-content: center;
+  font-size: 25px;
 }
 
 .intro {
@@ -93,4 +94,24 @@ main {
   align-items: center;
   justify-content: center;
   gap: 20px;
+}
+
+.more-events {
+  text-align: center;
+  padding: 30px 0 50px;
+}
+
+.more-events button {
+  background-color: #3755DB;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 20px 50px;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.more-events button:hover {
+  background-color: #d772bb;
 }
